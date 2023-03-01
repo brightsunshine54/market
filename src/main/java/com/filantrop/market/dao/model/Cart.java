@@ -1,15 +1,17 @@
-package com.filantrop.SpringDataJDBC.dao.model;
+package com.filantrop.market.dao.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Version;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -22,12 +24,10 @@ public class Cart {
     private Instant createDateTime = Instant.now();
     private Instant updateDateTime;
 
+    @MappedCollection(idColumn = "CART_ID")
+    private Set<Item> items = new HashSet<>();
 
     public Cart(String category) {
         this.category = category;
     }
-
-    //List<Item> items;
-    //Set<Tag> tags;
-    //List<Characteristic> cartCharacteristics;
 }

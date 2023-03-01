@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.filantrop</groupId>
-	<artifactId>SpringDataJDBC</artifactId>
+	<artifactId>market</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringDataJDBC</name>
+	<name>market</name>
 	<description>Demo project for Spring Data JDBC</description>
 	<properties>
 		<java.version>11</java.version>

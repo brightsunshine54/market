@@ -1,4 +1,4 @@
-package com.filantrop.SpringDataJDBC.dao.model;
+package com.filantrop.market.dao.model;
 
 import lombok.Data;
 
