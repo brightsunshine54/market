@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.MappedCollection;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table("CARTS")
 public class Cart {
     @Id
     private String cartId;
@@ -24,8 +26,12 @@ public class Cart {
     private Instant createDateTime = Instant.now();
     private Instant updateDateTime;
 
-    @MappedCollection(idColumn = "CART_ID")
-    private Set<Item> items = new HashSet<>();
+    /*
+    idColumn – поле, по которому осуществляется связь
+    keyColumn – поле, по которому упорядочиваются записи в дочерней таблице.
+    */
+    @MappedCollection(idColumn = "CART_ID", keyColumn = "CART_KEY")
+    private List<Item> items = new ArrayList<>();
 
     public Cart(String category) {
         this.category = category;

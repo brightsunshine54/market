@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Slf4j
-class MarketApplicationTests {
+class CartRepositoryTests {
 
     @Autowired
     CartRepository cartRepository;

@@ -4,10 +4,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.Instant;
 
 @Data
+@Table("ITEMS")
 public class Item {
     @Id
     private String itemId;
